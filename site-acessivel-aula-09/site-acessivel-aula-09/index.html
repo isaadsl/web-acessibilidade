@@ -1,104 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tyler, The Creator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header class="p-5">
-    <nav class="container d-flex justify-content-between align-items-center">
-      <img src="https://via.placeholder.com/150x50?text=Tyler+Logo" class="nav-img" loading="lazy">
-      <ul class="nav mt-5">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-        <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+  <header class="p-3 bg-dark">
+    <nav class="container d-flex justify-content-between align-items-center" aria-label="Menu principal">
+      <a href="#inicio" class="navbar-brand">
+        <img src="https://via.placeholder.com/150x50?text=Tyler+Logo" alt="Logo Tyler, The Creator" class="nav-img" loading="lazy" />
+      </a>
+
+      <ul class="nav mt-3 mt-md-0" role="menu">
+        <li class="nav-item" role="none">
+          <a class="nav-link text-white" href="#inicio" role="menuitem" tabindex="0">Início</a>
+        </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link text-white" href="#sobre" role="menuitem" tabindex="0">Sobre</a>
+        </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link text-white" href="#galeria" role="menuitem" tabindex="0">Galeria</a>
+        </li>
+        <li class="nav-item" role="none">
+          <a class="nav-link text-white" href="#contato" role="menuitem" tabindex="0">Contato</a>
+        </li>
       </ul>
-      <div id="acessibilidade" class="menu-acessibilidade">
-        <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false">acessibilidade</button>
-        <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
-          <button id="aumentar-fonte" class="btn btn-primary fw-bold" aria-label="Aumentar o tamanho da fonte">A+</button>
-          <button id="diminuir-fonte" class="btn btn-primary fw-bold" aria-label="diminuir o tamanho da fonte">A-</button>
-          <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alterna o contraste de cores"><i class="bi bi-shadows"></i></button>
+
+      <div id="acessibilidade" class="menu-acessibilidade" role="region" aria-label="Opções de acessibilidade">
+        <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false" aria-controls="opcoes-acessibilidade">
+          Acessibilidade
+        </button>
+        <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista visually-hidden">
+          <button id="aumentar-fonte" class="btn btn-primary fw-bold mb-2" aria-label="Aumentar o tamanho da fonte">A+</button>
+          <button id="diminuir-fonte" class="btn btn-primary fw-bold mb-2" aria-label="Diminuir o tamanho da fonte">A-</button>
+          <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alternar o contraste de cores">
+            <i class="bi bi-shadows"></i>
+          </button>
         </div>
       </div>
     </nav>
   </header>
 
   <main class="container my-5">
-    <section id="inicio" class="my-5">
-      <div class="inicio-fundo d-flex justify-content-between align-items-center">
-        <div class="esquerda-conteudo">
+    <section id="inicio" class="my-5" tabindex="0" aria-label="Seção de boas-vindas">
+      <div class="inicio-fundo d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+        <div class="esquerda-conteudo text-center text-md-start">
           <h1 class="display-4 text-white fst-italic fw-bold">Bem-vindo ao universo de</h1>
-          <img src="https://via.placeholder.com/400x100?text=Tyler+The+Creator" class="mb-3" width="400" height="auto" loading="lazy">
-          <a href="#sobre" class="btn btn-primary btn-lg botao-inicio fw-semibold">Quero conhecer!</a>
+          <img src="https://via.placeholder.com/400x100?text=Tyler+The+Creator" alt="Tyler The Creator" class="mb-3 img-fluid" width="400" height="auto" loading="lazy" />
+          <a href="#sobre" class="btn btn-primary btn-lg fw-semibold">Quero conhecer!</a>
         </div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Tyler_The_Creator_Lollapalooza_2015.jpg" alt="Tyler The Creator em show no Lollapalooza 2015" title="Imagem: Wikimedia Commons - CC BY-SA" class="img-fluid img-inicio">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Tyler_The_Creator_Lollapalooza_2015.jpg" alt="Tyler The Creator em show no Lollapalooza 2015" title="Imagem: Wikimedia Commons - CC BY-SA" class="img-fluid rounded shadow img-inicio" loading="lazy" />
       </div>
     </section>
 
     <section id="sobre" class="my-5 pt-6 secao-tropicalia" tabindex="0" aria-label="Sobre Tyler, The Creator">
-      <div class="container d-flex align-items-center">
-        <div class="col-4 d-flex justify-content-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tyler_The_Creator_%40_Roskilde_Festival_2011.jpg/440px-Tyler_The_Creator_%40_Roskilde_Festival_2011.jpg" class="rounded-pill" width="273" height="331" loading="lazy">
+      <div class="row align-items-center">
+        <div class="col-md-4 d-flex justify-content-center mb-4 mb-md-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tyler_The_Creator_%40_Roskilde_Festival_2011.jpg/440px-Tyler_The_Creator_%40_Roskilde_Festival_2011.jpg" alt="Tyler, The Creator no Roskilde Festival 2011" class="rounded-pill img-fluid" width="273" height="331" loading="lazy" />
         </div>
-        <div class="col-5">
+        <div class="col-md-7">
           <h2>Quem é Tyler, The Creator?</h2>
-          <p class="p-2">
+          <p class="p-2 fs-5">
             Tyler, The Creator é um rapper, produtor musical, estilista e diretor norte-americano. Fundador do coletivo Odd Future, ficou conhecido pelo estilo irreverente e pelas produções musicais criativas e ousadas. Seus álbuns "Flower Boy", "IGOR" e "Call Me If You Get Lost" foram sucesso de crítica e público. Ele mistura hip hop, soul, jazz e elementos alternativos, sempre com uma identidade visual marcante.
-            <br><em>Fonte: Wikipedia, Rolling Stone</em>
+            <br /><em>Fonte: Wikipedia, Rolling Stone</em>
           </p>
         </div>
       </div>
     </section>
 
-    <section id="galeria" tabindex="0" aria-label="Galeria de imagens de Tyler">
-      <h2 class="text-center pt-5">Galeria</h2>
-      <div class="container p-3 mt-3 fundo-galeria">
-        <div class="row justify-content-md-center">
-          <div class="col-md-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Tyler%2C_The_Creator_in_2012.jpg" class="img-fluid rounded-5" loading="lazy">
+    <section id="galeria" tabindex="0" aria-label="Galeria de imagens de Tyler, The Creator" class="my-5">
+      <h2 class="text-center pt-5 mb-4">Galeria</h2>
+      <div class="container p-3 fundo-galeria rounded shadow-sm">
+        <div class="row justify-content-center g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Tyler%2C_The_Creator_in_2012.jpg" alt="Tyler, The Creator em 2012" class="img-fluid rounded-5 shadow" loading="lazy" />
           </div>
-          <div class="col-md-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Tyler%2C_the_Creator_at_Roskilde_Festival.jpg" class="img-fluid rounded-5" loading="lazy">
+          <div class="col-12 col-md-6 col-lg-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Tyler%2C_the_Creator_at_Roskilde_Festival.jpg" alt="Tyler, The Creator no Roskilde Festival" class="img-fluid rounded-5 shadow" loading="lazy" />
           </div>
-        </div>
-        <div class="row mt-4 justify-content-md-center">
-          <div class="col-md-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Tyler%2C_The_Creator_%40_Terminal_5_2011.jpg" class="img-fluid rounded-5" loading="lazy">
+          <div class="col-12 col-md-6 col-lg-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Tyler%2C_The_Creator_%40_Terminal_5_2011.jpg" alt="Tyler, The Creator no Terminal 5 em 2011" class="img-fluid rounded-5 shadow" loading="lazy" />
           </div>
-          <div class="col-md-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Tyler_The_Creator_Lollapalooza_2015.jpg" class="img-fluid rounded-5" loading="lazy">
+          <div class="col-12 col-md-6 col-lg-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Tyler_The_Creator_Lollapalooza_2015.jpg" alt="Tyler The Creator no Lollapalooza 2015" class="img-fluid rounded-5 shadow" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contato">
-      <div class="container p-5 d-flex justify-content-center">
-        <div class="col-md-8 col-lg-10 rounded-5 formulario">
-          <h2 class="mb-3">Entre em contato</h2>
+    <section id="contato" class="my-5" aria-labelledby="contato-title">
+      <div class="container d-flex justify-content-center">
+        <div class="col-md-8 col-lg-10 rounded-5 formulario p-4 shadow-sm bg-light">
+          <h2 id="contato-title" class="mb-4">Entre em contato</h2>
           <form>
-            <div class="form-group mb-3">
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1" placeholder="Digite seu nome completo">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" id="nome" name="nome" class="form-control rounded-3" placeholder="Digite seu nome completo" required />
             </div>
-            <div class="form-group mb-3">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" class="form-control rounded-3 mt-1" placeholder="Digite seu email">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-control rounded-3" placeholder="Digite seu email" required />
             </div>
-            <div class="form-group mb-3">
-              <label for="mensagem">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4" placeholder="Escreva sua mensagem"></textarea>
+            <div class="mb-4">
+              <label for="mensagem" class="form-label">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" class="form-control rounded-4" rows="4" placeholder="Escreva sua mensagem" required></textarea>
             </div>
-            <div class="d-grid gap-2">
+            <div class="d-grid">
               <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar mensagem</button>
             </div>
           </form>
@@ -107,16 +121,18 @@
     </section>
   </main>
 
-  <footer class="text-center p-3 fst-italic">
+  <footer class="text-center p-4 fst-italic bg-dark text-white">
     <p>Acesse nossas redes:</p>
-    <i class="bi bi-whatsapp"></i>
-    <i class="bi bi-instagram"></i>
-    <i class="bi bi-tiktok"></i>
-    <p class="mt-3">Desenvolvido por Isa 3E.</p>
+    <div class="d-flex justify-content-center gap-3 fs-3 mb-3" role="list">
+      <a href="#" class="text-white" aria-label="WhatsApp" role="listitem"><i class="bi bi-whatsapp"></i></a>
+      <a href="#" class="text-white" aria-label="Instagram" role="listitem"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-white" aria-label="TikTok" role="listitem"><i class="bi bi-tiktok"></i></a>
+    </div>
+    <p class="mb-0">Desenvolvido por Isa 3E.</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
-  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
