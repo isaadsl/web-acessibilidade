@@ -1,200 +1,288 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
 :root {
-    --laranja-claro: #FF862A;
-    --alto-contraste-fundo: #000000;
-    --alto-contraste-texto: #ffffff;
-    --alto-contraste-link: #ffd700;
+    --amarelo-tyler: #FFD400;     /* amarelo vibrante */
+    --preto-forte: #0D0D0D;       /* preto quase absoluto */
+    --branco-neve: #F9F9F9;       /* branco suave */
+    --cinza-claro: #E0E0E0;       /* cinza suave */
+    --rosa-pastel: #FF6F91;       /* rosa para detalhes */
+    --azul-pastel: #6EC1E4;       /* azul suave para contraste */
 }
 
 body {
+    background-color: var(--preto-forte);
+    color: var(--branco-neve);
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #ffffff;
+    background-color: var(--preto-forte);
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid var(--amarelo-tyler);
+    box-shadow: 0 3px 10px rgba(255, 212, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-
-
-section {
-    padding-bottom: 5rem;
-}
-
 
 .nav-link {
-    color: #CB6D43;
-    font-weight: 600;
+    color: var(--amarelo-tyler);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--rosa-pastel);
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .inicio-fundo {
-    /* aula 3 */
-    background-image: url('img/4965007.jpg');
-    /* Substitua pelo caminho da sua imagem */
+    background-image: url('img/tyler-new-album-bg.jpg'); /* Troque pela imagem do álbum */
     background-size: cover;
-    background-position: right;
-    border-radius: 80px;
-    width: 100%;
-    height: 606px;
-    padding: 40px;
-    margin: 0 auto;
-}
-
-/* posicionamento para a imagem à direita */
-.img-inicio {
-    position: absolute;
-    right: 0;
-    top: 18rem;
-    width: 45rem;
-    height: auto;
-}
-
-
-.esquerda-conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-
-.botao-inicio {
-    background-color: var(--laranja-claro);
-    border-radius: 30px;
-    border: none;
-    width: 14em;
-    height: 3em;
-    align-content: center;
-
-}
-
-.display-4 {
-    text-shadow: -5px 5px var(--laranja-claro);
-}
-
-
-#tropicalia {
-    position: relative;
-    padding-top: 5rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    background: url('img/flor.png') top right no-repeat,
-        url('img/flor-esquerda.png') bottom left no-repeat;
-    background-size: 180px 180px;
-    /* Ajuste o tamanho conforme necessário */
-}
-
-#tropicalia .container {
+    background-position: center;
+    height: 600px;
+    border-radius: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    /* Garante que o conteúdo fica acima das imagens do background */
+    padding: 0 4rem;
+    color: var(--amarelo-tyler);
+    text-shadow: 0 0 15px rgba(255, 212, 0, 0.8);
+    font-weight: 900;
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
 }
 
+.img-inicio {
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px var(--amarelo-tyler);
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+
+.img-inicio:hover {
+    transform: scale(1.1);
+}
+
+.botao-inicio {
+    background-color: var(--amarelo-tyler);
+    border: none;
+    color: var(--preto-forte);
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(255, 212, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botao-inicio:hover {
+    background-color: var(--rosa-pastel);
+    box-shadow: 0 10px 20px rgba(255, 111, 145, 0.7);
+    color: var(--branco-neve);
+}
+
+#sobre {
+    background: var(--preto-forte);
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--amarelo-tyler);
+    display: flex;
+    gap: 3rem;
+    padding: 3rem;
+    align-items: center;
+}
+
+#sobre img {
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px var(--rosa-pastel);
+    transition: transform 0.3s ease;
+}
+
+#sobre img:hover {
+    transform: scale(1.05);
+}
+
+#sobre .conteudo {
+    max-width: 700px;
+}
 
 h2 {
-    font-family: 'Lemon', serif;
-    font-size: 2.5em;
-    font-style: normal;
-    color: var(--laranja-claro);
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--amarelo-tyler);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--amarelo-tyler);
+}
+
+#sobre p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--cinza-claro);
 }
 
 #galeria {
-    background-color: #FAF4F4;
-
+    background-color: #1a1a1a;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 25px var(--rosa-pastel);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
-.fundo-galeria {
-    background: url('img/flor-bottom-direita.png') bottom right no-repeat;
-    background-size: 180px 180px;
+#galeria img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px var(--amarelo-tyler);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--rosa-pastel);
 }
 
 #contato {
-    background-image: url('img/4965007.jpg');
-    background-size: cover;
-    padding: 4rem 0;
-    /* Espaçamento interno para a seção de contato */
-
+    background-color: var(--preto-forte);
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 40px var(--amarelo-tyler);
+    color: var(--cinza-claro);
 }
 
 .formulario {
-    background-color: #ffffff;
+    background-color: #222;
     padding: 2rem;
-    /* Espaçamento interno dentro do formulário */
-    border-radius: 10px;
-    /* Borda arredondada para o formulário */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Sombra suave para destacar o formulário */
-    font-weight: bold;
-}
-
-.formulario button {
-    background-color: #CB6D43;
-    border: none;
-    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 0 20px var(--rosa-pastel);
 }
 
 .form-control {
-    background-color: #F1EDEF;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid var(--amarelo-tyler);
+    background-color: #111;
+    color: var(--branco-neve);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
-.menu-acessibilidade{
+
+.form-control::placeholder {
+    color: var(--cinza-claro);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--rosa-pastel);
+    background-color: #222;
+}
+
+.formulario button {
+    background-color: var(--amarelo-tyler);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--preto-forte);
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(255, 212, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: var(--rosa-pastel);
+    color: var(--branco-neve);
+}
+
+.menu-acessibilidade {
     position: fixed;
-    top:2rem;
-    right:20px;
+    top: 2rem;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--amarelo-tyler);
     z-index: 1000;
 }
 
-.rotacao-botao{
+.opcoes-acessibilidade button {
+    background-color: var(--amarelo-tyler);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-bottom: 8px;
+    border-radius: 30px;
+    font-weight: 700;
+    color: var(--preto-forte);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.opcoes-acessibilidade button:hover {
+    background-color: var(--rosa-pastel);
+    color: var(--branco-neve);
+}
+
+.rotacao-botao {
     transform: rotate(-90deg);
     transform-origin: right center;
+    transition: transform 0.4s ease;
 }
 
-.opcoes-acessibilidade{
-    margin-top:10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.opcoes-acessibilidade button{
-    margin-bottom: 5px;
-}
-.apresenta-lista{
+.apresenta-lista {
     display: none;
 }
 
-.alto-contraste{
-    background-color: var(--alto-contraste-fundo);
-    color: var(--alto-contraste-texto);
+/* ALTO CONTRASTE */
+
+.alto-contraste {
+    background-color: var(--preto-forte);
+    color: var(--branco-neve);
 }
 
 .alto-contraste header,
 .alto-contraste footer,
-.alto-contraste .formulario{
-    background-color: var(--alto-contraste-fundo);
-    color: var(--alto-contraste-texto);
+.alto-contraste .formulario {
+    background-color: var(--preto-forte);
+    color: var(--branco-neve);
 }
 
-.alto-contraste .nav-link{
-    color: var(--alto-contraste-link);
+.alto-contraste .nav-link {
+    color: var(--amarelo-tyler);
 }
 
 .alto-contraste .botao-inicio,
 .alto-contraste .formulario button,
-.alto-contraste .btn-primary{
-    background-color: var(--alto-contraste-link);
-    color: var(--alto-contraste-fundo)
+.alto-contraste .btn-primary {
+    background-color: var(--amarelo-tyler);
+    color: var(--preto-forte);
+    box-shadow: 0 0 15px var(--amarelo-tyler);
 }
 
-.alto-contraste #tropicalia {
-    background: none;
-}
-
-.alto-contraste #galeria {
-    background-color: var(--alto-contraste-fundo);
-}
-.alto-contraste .fundo-galeria {
-    background: none;
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-style: italic;
+    color: var(--amarelo-tyler);
+    background-color: var(--preto-forte);
+    box-shadow: inset 0 2px 10px rgba(255, 212, 0, 0.4);
 }
