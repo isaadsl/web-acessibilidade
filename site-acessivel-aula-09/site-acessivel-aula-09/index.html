@@ -1,138 +1,211 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tyler, The Creator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyler, The Creator | Don't Tap The Glass</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary: #0F1A20;
+            --secondary: #5C6B73;
+            --accent: #C6AC8F;
+            --highlight: #EAE0D5;
+            --text: #F4F4F4;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        .title-font {
+            font-family: 'Archivo Black', sans-serif;
+        }
+        
+        .album-cover {
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .album-cover:hover {
+            transform: scale(1.03);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(198, 172, 143, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(198, 172, 143, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(198, 172, 143, 0); }
+        }
+    </style>
 </head>
+<body class="min-h-screen">
 
-<body>
-  <header class="p-3 bg-dark">
-    <nav class="container d-flex justify-content-between align-items-center" aria-label="Menu principal">
-      <a href="#inicio" class="navbar-brand">
-        <img src="https://via.placeholder.com/150x50?text=Tyler+Logo" alt="Logo Tyler, The Creator" class="nav-img" loading="lazy" />
-      </a>
-
-      <ul class="nav mt-3 mt-md-0" role="menu">
-        <li class="nav-item" role="none">
-          <a class="nav-link text-white" href="#inicio" role="menuitem" tabindex="0">Início</a>
-        </li>
-        <li class="nav-item" role="none">
-          <a class="nav-link text-white" href="#sobre" role="menuitem" tabindex="0">Sobre</a>
-        </li>
-        <li class="nav-item" role="none">
-          <a class="nav-link text-white" href="#galeria" role="menuitem" tabindex="0">Galeria</a>
-        </li>
-        <li class="nav-item" role="none">
-          <a class="nav-link text-white" href="#contato" role="menuitem" tabindex="0">Contato</a>
-        </li>
-      </ul>
-
-      <div id="acessibilidade" class="menu-acessibilidade" role="region" aria-label="Opções de acessibilidade">
-        <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao" aria-expanded="false" aria-controls="opcoes-acessibilidade">
-          Acessibilidade
-        </button>
-        <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista visually-hidden">
-          <button id="aumentar-fonte" class="btn btn-primary fw-bold mb-2" aria-label="Aumentar o tamanho da fonte">A+</button>
-          <button id="diminuir-fonte" class="btn btn-primary fw-bold mb-2" aria-label="Diminuir o tamanho da fonte">A-</button>
-          <button id="alterna-contraste" class="btn btn-primary fw-bold" aria-label="Alternar o contraste de cores">
-            <i class="bi bi-shadows"></i>
-          </button>
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-70 backdrop-blur-md fixed w-full z-50 border-b border-[var(--secondary)]">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="./images/logo.png" alt="Logo estilizado de Tyler, The Creator" class="h-12">
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white hover:text-[var(--accent)]">Início</a>
+                <a href="#about" class="nav-link text-white hover:text-[var(--accent)]">Sobre</a>
+                <a href="#music" class="nav-link text-white hover:text-[var(--accent)]">Música</a>
+                <a href="#tour" class="nav-link text-white hover:text-[var(--accent)]">Shows</a>
+                <a href="#shop" class="nav-link text-white hover:text-[var(--accent)]">Loja</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                          d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-      </div>
     </nav>
-  </header>
 
-  <main class="container my-5">
-    <section id="inicio" class="my-5" tabindex="0" aria-label="Seção de boas-vindas">
-      <div class="inicio-fundo d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
-        <div class="esquerda-conteudo text-center text-md-start">
-          <h1 class="display-4 text-white fst-italic fw-bold">Bem-vindo ao universo de</h1>
-          <img src="https://via.placeholder.com/400x100?text=Tyler+The+Creator" alt="Tyler The Creator" class="mb-3 img-fluid" width="400" height="auto" loading="lazy" />
-          <a href="#sobre" class="btn btn-primary btn-lg fw-semibold">Quero conhecer!</a>
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 bg-gradient-to-b from-[var(--primary)] to-black">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="title-font text-4xl md:text-6xl lg:text-7xl font-bold mb-4">DON'T TAP<br>THE GLASS</h1>
+                <p class="text-lg md:text-xl mb-8 text-[var(--highlight)]">O novo álbum de Tyler, The Creator</p>
+                <div class="flex space-x-4">
+                    <button class="bg-[var(--accent)] hover:bg-[var(--highlight)] text-black font-bold py-3 px-6 rounded-full transition duration-300">
+                        OUVIR AGORA
+                    </button>
+                    <button class="border-2 border-[var(--accent)] hover:bg-[var(--accent)] hover:text-black text-[var(--accent)] font-bold py-3 px-6 rounded-full transition duration-300">
+                        VER CLIPE
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <img src="./images/capa-album.png" alt="Capa do álbum Don't Tap The Glass" class="album-cover rounded-lg w-full max-w-md">
+                    <div class="absolute -bottom-5 -right-5 bg-[var(--accent)] text-black font-bold py-2 px-4 rounded-full transform rotate-12">
+                        NOVO LANÇAMENTO
+                    </div>
+                </div>
+            </div>
         </div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Tyler_The_Creator_Lollapalooza_2015.jpg" alt="Tyler The Creator em show no Lollapalooza 2015" title="Imagem: Wikimedia Commons - CC BY-SA" class="img-fluid rounded shadow img-inicio" loading="lazy" />
-      </div>
     </section>
 
-    <section id="sobre" class="my-5 pt-6 secao-tropicalia" tabindex="0" aria-label="Sobre Tyler, The Creator">
-      <div class="row align-items-center">
-        <div class="col-md-4 d-flex justify-content-center mb-4 mb-md-0">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tyler_The_Creator_%40_Roskilde_Festival_2011.jpg/440px-Tyler_The_Creator_%40_Roskilde_Festival_2011.jpg" alt="Tyler, The Creator no Roskilde Festival 2011" class="rounded-pill img-fluid" width="273" height="331" loading="lazy" />
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-[var(--primary)]">
+        <div class="container mx-auto">
+            <h2 class="title-font text-3xl md:text-4xl font-bold mb-16 text-center">TYLER, THE CREATOR</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <img src="./images/tyler.png" alt="Retrato artístico de Tyler" class="rounded-lg shadow-xl w-full max-w-sm">
+                </div>
+                <div class="md:w-2/3 md:pl-16">
+                    <p class="text-lg mb-6">
+                        Tyler Gregory Okonma, conhecido como Tyler, The Creator, é um rapper, produtor, diretor e designer americano.
+                    </p>
+                    <p class="text-lg mb-6">
+                        Seu estilo evoluiu do rap agressivo ao som mais experimental de álbuns como "Flower Boy" e "IGOR".
+                    </p>
+                    <p class="text-lg mb-8">
+                        "Don't Tap The Glass" marca seu retorno com uma fusão de hip hop, jazz e soul.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-[var(--secondary)] bg-opacity-50 px-4 py-2 rounded-full">
+                            <span class="font-bold text-[var(--accent)]">Gênero: </span>Hip Hop Alternativo
+                        </div>
+                        <div class="bg-[var(--secondary)] bg-opacity-50 px-4 py-2 rounded-full">
+                            <span class="font-bold text-[var(--accent)]">Origem: </span>Los Angeles, CA
+                        </div>
+                        <div class="bg-[var(--secondary)] bg-opacity-50 px-4 py-2 rounded-full">
+                            <span class="font-bold text-[var(--accent)]">Ativo desde: </span>2007
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-7">
-          <h2>Quem é Tyler, The Creator?</h2>
-          <p class="p-2 fs-5">
-            Tyler, The Creator é um rapper, produtor musical, estilista e diretor norte-americano. Fundador do coletivo Odd Future, ficou conhecido pelo estilo irreverente e pelas produções musicais criativas e ousadas. Seus álbuns "Flower Boy", "IGOR" e "Call Me If You Get Lost" foram sucesso de crítica e público. Ele mistura hip hop, soul, jazz e elementos alternativos, sempre com uma identidade visual marcante.
-            <br /><em>Fonte: Wikipedia, Rolling Stone</em>
-          </p>
-        </div>
-      </div>
     </section>
 
-    <section id="galeria" tabindex="0" aria-label="Galeria de imagens de Tyler, The Creator" class="my-5">
-      <h2 class="text-center pt-5 mb-4">Galeria</h2>
-      <div class="container p-3 fundo-galeria rounded shadow-sm">
-        <div class="row justify-content-center g-4">
-          <div class="col-12 col-md-6 col-lg-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Tyler%2C_The_Creator_in_2012.jpg" alt="Tyler, The Creator em 2012" class="img-fluid rounded-5 shadow" loading="lazy" />
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Tyler%2C_the_Creator_at_Roskilde_Festival.jpg" alt="Tyler, The Creator no Roskilde Festival" class="img-fluid rounded-5 shadow" loading="lazy" />
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Tyler%2C_The_Creator_%40_Terminal_5_2011.jpg" alt="Tyler, The Creator no Terminal 5 em 2011" class="img-fluid rounded-5 shadow" loading="lazy" />
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Tyler_The_Creator_Lollapalooza_2015.jpg" alt="Tyler The Creator no Lollapalooza 2015" class="img-fluid rounded-5 shadow" loading="lazy" />
-          </div>
+    <!-- Music Section -->
+    <section id="music" class="py-20 px-6 bg-gradient-to-b from-[var(--primary)] to-black">
+        <div class="container mx-auto">
+            <h2 class="title-font text-3xl md:text-4xl font-bold mb-16 text-center">DISCOGRAFIA</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Album 1 -->
+                <div class="bg-[var(--secondary)] bg-opacity-20 rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-lg">
+                    <img src="./images/dont-tap-the-glass.png" alt="Capa do álbum Don't Tap The Glass" class="w-full">
+                    <div class="p-6">
+                        <h3 class="title-font text-xl font-bold mb-2">DON'T TAP THE GLASS</h3>
+                        <p class="text-sm text-[var(--highlight)] mb-4">2023 • 14 faixas</p>
+                        <button class="bg-[var(--accent)] hover:bg-[var(--highlight)] text-black text-sm font-bold py-2 px-4 rounded-full w-full transition duration-300">
+                            OUVIR ÁLBUM
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Album 2 -->
+                <div class="bg-[var(--secondary)] bg-opacity-20 rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-lg">
+                    <img src="./images/call-me-if-you-get-lost.png" alt="Capa do álbum Call Me If You Get Lost" class="w-full">
+                    <div class="p-6">
+                        <h3 class="title-font text-xl font-bold mb-2">CALL ME IF YOU GET LOST</h3>
+                        <p class="text-sm text-[var(--highlight)] mb-4">2021 • 16 faixas</p>
+                        <button class="bg-[var(--accent)] hover:bg-[var(--highlight)] text-black text-sm font-bold py-2 px-4 rounded-full w-full transition duration-300">
+                            OUVIR ÁLBUM
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Album 3 -->
+                <div class="bg-[var(--secondary)] bg-opacity-20 rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-lg">
+                    <img src="./images/igor.png" alt="Capa do álbum IGOR" class="w-full">
+                    <div class="p-6">
+                        <h3 class="title-font text-xl font-bold mb-2">IGOR</h3>
+                        <p class="text-sm text-[var(--highlight)] mb-4">2019 • 12 faixas</p>
+                        <button class="bg-[var(--accent)] hover:bg-[var(--highlight)] text-black text-sm font-bold py-2 px-4 rounded-full w-full transition duration-300">
+                            OUVIR ÁLBUM
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Album 4 -->
+                <div class="bg-[var(--secondary)] bg-opacity-20 rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-lg">
+                    <img src="./images/flower-boy.png" alt="Capa do álbum Flower Boy" class="w-full">
+                    <div class="p-6">
+                        <h3 class="title-font text-xl font-bold mb-2">FLOWER BOY</h3>
+                        <p class="text-sm text-[var(--highlight)] mb-4">2017 • 14 faixas</p>
+                        <button class="bg-[var(--accent)] hover:bg-[var(--highlight)] text-black text-sm font-bold py-2 px-4 rounded-full w-full transition duration-300">
+                            OUVIR ÁLBUM
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="contato" class="my-5" aria-labelledby="contato-title">
-      <div class="container d-flex justify-content-center">
-        <div class="col-md-8 col-lg-10 rounded-5 formulario p-4 shadow-sm bg-light">
-          <h2 id="contato-title" class="mb-4">Entre em contato</h2>
-          <form>
-            <div class="mb-3">
-              <label for="nome" class="form-label">Nome</label>
-              <input type="text" id="nome" name="nome" class="form-control rounded-3" placeholder="Digite seu nome completo" required />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" name="email" class="form-control rounded-3" placeholder="Digite seu email" required />
-            </div>
-            <div class="mb-4">
-              <label for="mensagem" class="form-label">Mensagem</label>
-              <textarea id="mensagem" name="mensagem" class="form-control rounded-4" rows="4" placeholder="Escreva sua mensagem" required></textarea>
-            </div>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar mensagem</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="text-center p-4 fst-italic bg-dark text-white">
-    <p>Acesse nossas redes:</p>
-    <div class="d-flex justify-content-center gap-3 fs-3 mb-3" role="list">
-      <a href="#" class="text-white" aria-label="WhatsApp" role="listitem"><i class="bi bi-whatsapp"></i></a>
-      <a href="#" class="text-white" aria-label="Instagram" role="listitem"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="text-white" aria-label="TikTok" role="listitem"><i class="bi bi-tiktok"></i></a>
-    </div>
-    <p class="mb-0">Desenvolvido por Isa 3E.</p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js" defer></script>
-  <script src="script.js" defer></script>
 </body>
-
 </html>
