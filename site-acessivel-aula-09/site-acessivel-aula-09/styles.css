@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
-
+/* 🎨 Variáveis de cor */
 :root {
-    --amarelo-tyler: #FFD400;     /* amarelo vibrante */
-    --preto-forte: #0D0D0D;       /* preto quase absoluto */
-    --branco-neve: #F9F9F9;       /* branco suave */
-    --cinza-claro: #E0E0E0;       /* cinza suave */
-    --rosa-pastel: #FF6F91;       /* rosa para detalhes */
-    --azul-pastel: #6EC1E4;       /* azul suave para contraste */
+  --primary: #1d4ed8;    /* Azul principal */
+  --secondary: #9333ea;  /* Roxo secundário */
+  --accent: #facc15;     /* Amarelo */
+  --highlight: #f43f5e;  /* Rosa/Salmon */
 }
 
+/* 🔽 Aqui continuam seus estilos já existentes */
 body {
     background-color: var(--preto-forte);
     color: var(--branco-neve);
